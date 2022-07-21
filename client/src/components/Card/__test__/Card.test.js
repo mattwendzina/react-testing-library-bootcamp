@@ -11,7 +11,9 @@ describe("Card component", () => {
       url: "https://images.unsplash.com/photo-1573865526739-10659fec78a5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=830&q=80",
       alt: "Cute cat",
     },
-    favoured: false,
+    favourite: false,
+    updateFavourite: () => {},
+    index: 1,
   };
   test("should show name of cat", () => {
     render(<Card {...cardProps} />);

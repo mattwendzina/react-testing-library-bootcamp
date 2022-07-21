@@ -3,8 +3,11 @@ import userEvent from "@testing-library/user-event";
 import Filter from "../Filter";
 
 describe("Filter component", () => {
+  const setup = () => {
+    return render(<Filter filters={{}} setFilters={() => {}} />);
+  };
   test("should be able to change value of favourite select", () => {
-    render(<Filter />);
+    setup();
     const select = screen.getByLabelText("Favourite");
     expect(select.value).toBe("any");
     userEvent.selectOptions(select, "favourite");
@@ -13,7 +16,7 @@ describe("Filter component", () => {
     expect(select.value).toBe("not favourite");
   });
   test("should be able to change value of gender select", () => {
-    render(<Filter />);
+    setup();
     const select = screen.getByLabelText("Gender");
     expect(select.value).toBe("any");
     userEvent.selectOptions(select, "male");
